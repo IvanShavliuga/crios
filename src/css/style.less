@@ -3,12 +3,16 @@
 **********************************************************/
 @bodybackground: rgb(250,251,253);
 @bodyfont: myriad-pro-condensed, sans-serif;
+@bodyhover: #0078D7;
 
 @headerlogo:#56b;
 @subtitle:#ccc;
+@sizesubtitle:15px;
 @title:#344530;
 @backgroundbutton:#fff;
-@colorbutton:#56b;
+@colorbutton:#56b; 
+
+@containerbackground: #F6F6F6;
 
 /**********************************************************
 globals
@@ -26,7 +30,16 @@ body {
   padding:0;
   margin: 0;
 }
-
+.container {
+  margin:0 auto;
+  width:80%;
+  padding:100px 0;
+}
+section {
+  padding:0;
+  margin:0;
+  background-color:@bodybackground;
+}
 /**********************************************************
 animation
 **********************************************************/
@@ -47,8 +60,9 @@ header
 **********************************************************/
 .header {
   background-image:url("../images/header.png");
-  height:700px;  
+  height:1000px;  
   text-align:center;
+  background-clip:content-box;
   background-repeat:no-repeat;
   background-position:center top;
   &__logo{
@@ -76,7 +90,7 @@ header
   &__subtitle {
     color:@subtitle;
     text-transform:uppercase;
-    font-size:20px;  
+    font-size:@sizesubtitle;  
   }
   &__title {
     margin-top:40px;
@@ -86,7 +100,7 @@ header
   }
   &__desc {
     color:@subtitle;
-    font-size:20px;
+    font-size:@sizesubtitle;
     margin-top:10px;
   }
   &__button {
@@ -106,3 +120,85 @@ header
     }
   }
  }
+/**********************************************************
+navigation
+**********************************************************/
+.menu {
+  text-align:center;
+  &__title {
+    text-align:center;
+    font-size:30px;
+    margin-top:10px;
+    color:@title;   
+  } 
+  &__subtitle {
+    color:@subtitle;
+    font-size:@sizesubtitle;
+    margin-top:10px;
+    text-align:center;
+  }
+  &__list {
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;  
+    list-style:none;
+  }
+  &__item {
+    width:190px;
+    margin:10px 20px;
+    text-align:center;
+    background-repeat:no-repeat;
+    background-size:none;
+    background-position:center top;
+    display:block; 
+    filter:grayscale(0.85);
+    &:first-child{     
+      background-image: url("../images/nav1.jpg");  
+      
+    }
+    &:nth-child(2){     
+      background-image: url("../images/nav2.jpg");  
+    }
+    &:nth-child(3){     
+      background-image: url("../images/nav3.jpg");  
+    }
+    &:last-child{     
+      background-image: url("../images/nav4.jpg");  
+    } 
+    &:hover {
+      filter:none;
+      .menu__element, .menu__desc {
+        color:@bodyhover;
+      }
+    }
+  }
+  &__element {
+    font-size:20px;
+    margin-top:90px;
+  }
+  &__desc {
+    color:@subtitle;
+    font-size:@sizesubtitle;
+    margin:0;
+    text-align:center;
+     
+  }
+  &__button {
+    font-size:20px;
+    text-transform:uppercase;
+    background-color:@backgroundbutton;
+    padding:10px 30px;
+    color:@colorbutton;
+    border:1px solid darken(@backgroundbutton,30%);
+    box-shadow: 0 0 15px darken(@backgroundbutton,30%); 
+    border-radius:24px;
+    margin-top:40px;
+    &:hover {
+      color:darken(@colorbutton,20%);
+      background-color:darken(@backgroundbutton,15%);
+      transition:0.6s;
+    }
+  }
+  
+    
+}
