@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import appindex from './appindex';
 
 Vue.config.devtools = true;
@@ -6,9 +7,10 @@ Vue.config.devtools = true;
 new Vue({
     el: '#app',
     data: {
-    	Hello:"Hello world" 
+    	Hello:"Hello world"
     },
     components: {
       appindex: appindex    
     }
+    
 });

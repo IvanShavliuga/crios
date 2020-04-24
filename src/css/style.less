@@ -1,53 +1,108 @@
+/**********************************************************
+ vars
+**********************************************************/
+@bodybackground: rgb(250,251,253);
+@bodyfont: myriad-pro-condensed, sans-serif;
 
-/*vars*/
-@headercolor:#fff;
-@footercolor:#effd46;
-@socialcolor:#fff;
-@headername:#fff;
-@headerhovercolor:#effd46;
-@headerbackgroundcolor:RGB(53,79,255);
-@avatar:'../images/avatar.jpg';
-@bobylink:#4566fc;
-@bodylinkhover:#45a2fd;
-@bodylinkvisited:#4566fc;
-@linktransition:0.5s;
-@navheadercolor:#121212;
-@navsubheadercolor:#5785fa;
-@navsubheaderhover:#78a1fa;
-@navheaderhover:#757575;
-@navdesccolor:RGB(110,115,116);
-@line:1px solid #a9a9a9;
-@linepoint:7px solid #cdcdcd;
-@linepointhover:7px solid #4566fc;
-@backgroundbody:#fff;
-@lineinfohover:#dffdee;
-@arrowlinkcolor:#df9adf;
-@headerfirstletter:#fd7856;
+@headerlogo:#56b;
+@subtitle:#ccc;
+@title:#344530;
+@backgroundbutton:#fff;
+@colorbutton:#56b;
 
-/*mixins*/
-.posabsolute() {
-  position:absolute;
-  content: " ";
-  width:25px;
-  height:25px;
-  left:-5px;  
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  
-  .hover{
-    opacity:1;  
+/**********************************************************
+globals
+**********************************************************/
+body {
+  margin:0;
+  padding:0;
+  font-family:@bodyfont;
+  font-weight: bold;
+  font-style: normal;
+  background-color:@bodybackground;
+
+}
+#app, #appindex,html {
+  padding:0;
+  margin: 0;
+}
+
+/**********************************************************
+animation
+**********************************************************/
+@keyframes logo{
+  0% {
+    color: @headerlogo; 
   }
-  
-}
-.image(@url) {
-  background-image:url(@url);
-}
-.background() {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  .cover{
-    background-size: cover;
+  50% {
+    color: lighten(@headerlogo,15%)  
+  }
+  100% {
+    color: @headerlogo;  
   }
 }
+
+/**********************************************************
+header
+**********************************************************/
+.header {
+  background-image:url("../images/header.png");
+  height:700px;  
+  text-align:center;
+  background-repeat:no-repeat;
+  background-position:center top;
+  &__logo{
+    color:#56b;
+    text-transform:uppercase;
+    font-size:60px;
+    letter-spacing:3px;
+    margin-top:40px;
+    span {
+      animation: logo 1s infinite;
+      &:nth-child(2) {
+        animation-delay:0.2s;      
+      }    
+      &:nth-child(3) {
+        animation-delay:0.4s;      
+      } 
+      &:nth-child(4) {
+        animation-delay:0.6s;      
+      } 
+      &:nth-child(5) {
+        animation-delay:0.8s;      
+      }  
+    }
+  }
+  &__subtitle {
+    color:@subtitle;
+    text-transform:uppercase;
+    font-size:20px;  
+  }
+  &__title {
+    margin-top:40px;
+    font-size:50px;
+    margin-bottom:0;
+    color:@title;
+  }
+  &__desc {
+    color:@subtitle;
+    font-size:20px;
+    margin-top:10px;
+  }
+  &__button {
+    font-size:20px;
+    text-transform:uppercase;
+    background-color:@backgroundbutton;
+    padding:10px 30px;
+    color:@colorbutton;
+    border:1px solid darken(@backgroundbutton,30%);
+    box-shadow: 0 0 15px darken(@backgroundbutton,30%); 
+    border-radius:24px;
+    margin-top:40px;
+    &:hover {
+      color:darken(@colorbutton,20%);
+      background-color:darken(@backgroundbutton,15%);
+      transition:0.6s;
+    }
+  }
+ }
