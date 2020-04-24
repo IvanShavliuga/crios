@@ -1,0 +1,53 @@
+
+/*vars*/
+@headercolor:#fff;
+@footercolor:#effd46;
+@socialcolor:#fff;
+@headername:#fff;
+@headerhovercolor:#effd46;
+@headerbackgroundcolor:RGB(53,79,255);
+@avatar:'../images/avatar.jpg';
+@bobylink:#4566fc;
+@bodylinkhover:#45a2fd;
+@bodylinkvisited:#4566fc;
+@linktransition:0.5s;
+@navheadercolor:#121212;
+@navsubheadercolor:#5785fa;
+@navsubheaderhover:#78a1fa;
+@navheaderhover:#757575;
+@navdesccolor:RGB(110,115,116);
+@line:1px solid #a9a9a9;
+@linepoint:7px solid #cdcdcd;
+@linepointhover:7px solid #4566fc;
+@backgroundbody:#fff;
+@lineinfohover:#dffdee;
+@arrowlinkcolor:#df9adf;
+@headerfirstletter:#fd7856;
+
+/*mixins*/
+.posabsolute() {
+  position:absolute;
+  content: " ";
+  width:25px;
+  height:25px;
+  left:-5px;  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  
+  .hover{
+    opacity:1;  
+  }
+  
+}
+.image(@url) {
+  background-image:url(@url);
+}
+.background() {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  .cover{
+    background-size: cover;
+  }
+}
