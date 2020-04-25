@@ -39,6 +39,16 @@ div#appindex(data-id="appindex")
               if item == 5 
                 h4.content__name John Toe
                 p.content__prof CEO of crios.com
+  footer.footer
+    .footer__content
+      p.footer__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing eit.
+      h2.footer__title Lorem ipsum dolor sit amet
+      button.footer__button push button 
+    .footer__copyright 
+      p 
+        span.footer__icon &copy; 
+        a(href="https://github.com/IvanShavliuga" target="_blank").footer__link Ivan Shavliuga (Ivanov)
+        span  Republic Belarus, Novopolotsk, junior Frontend developer
 </template>
 <script>
 
