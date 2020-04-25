@@ -4,19 +4,103 @@
 @bodybackground: rgb(250,251,253);
 @bodyfont: myriad-pro-condensed, sans-serif;
 @bodyhover: #0078D7;
-
+@bodylink:#003847;
 @headerlogo:#56b;
 @subtitle:#ccc;
 @sizesubtitle:15px;
 @title:#344530;
 @backgroundbutton:#fff;
 @colorbutton:#56b; 
-
 @containerbackground: #F6F6F6;
-
 @contenttextbottom:#0078D7;
 @contenttextlast:#EC3955;
 
+/**********************************************************
+mixins
+**********************************************************/
+.button() {
+font-size:20px;
+    text-transform:uppercase;
+    background-color:@backgroundbutton;
+    padding:10px 30px;
+    color:@colorbutton;
+    border:1px solid darken(@backgroundbutton,30%);
+    box-shadow: 0 0 15px darken(@backgroundbutton,30%); 
+    border-radius:24px;
+    margin-top:40px;
+    position:relative;
+    &:hover {
+      color:darken(@colorbutton,20%);
+      background-color:darken(@backgroundbutton,15%);
+      transition:0.6s;
+    }
+    &:focus {
+    	outline:1px solid rgba(250,78,190,0.5);
+      &:before {
+        content:" ";
+        position:absolute;
+        width:13px;
+        height:13px;
+        left:10px;
+        top: 15px;
+        z-index:60;
+        border-radius:50%;
+        color:@bodyhover;
+        font-size:15px;
+        font-weight:bold;
+        line-height:14px;
+        border:1px solid red;
+        background-color:transparent;
+        animation:hover 1s infinite;      
+      } 
+    }
+
+}
+.link() {
+margin-right:20px; 
+    tab-index:5;
+  	 &:hover {
+      color:@bodyhover!important;  
+      text-decoration:underline; 
+      &:before {
+        content:"+";
+        position:absolute;
+        width:13px;
+        height:13px;
+        left:-15px;
+        top: 2px;
+        border-radius:50%;
+        color:@bodyhover;
+        font-size:20px;
+        font-weight:bold;
+        line-height:9px;
+        border:1px solid @bodyhover;
+        background-color:transparent;
+        animation:link 1s infinite;      
+      } 
+    }
+    color: @bodylink;
+    text-decoration:none;
+    position:relative;
+    &:focus {
+    	outline:1px solid rgba(250,78,190,0.5);
+      &:before {
+        content:" ";
+        position:absolute;
+        width:13px;
+        height:13px;
+        left:-15px;
+        top: 2px;
+        border-radius:50%;
+        color:@bodyhover;
+        font-size:15px;
+        font-weight:bold;
+        line-height:14px;
+        background-color:transparent;
+        animation:hover 1s infinite;      
+      } 
+    }
+}
 /**********************************************************
 globals
 **********************************************************/
@@ -70,6 +154,34 @@ animation
   }
 }
 
+@keyframes link{
+  0% {
+    opacity:0.1;
+    color:transparent
+  }
+  20% {
+    opacity:0.5; 
+  }
+  100% {
+    opacity:1;
+    color:@bodyhover;  
+  }
+}
+@keyframes hover{
+  0% {
+    opacity:0.1;
+    color:transparent
+  }
+  20% {
+    opacity:0.5; 
+  }
+  100% {
+    opacity:1;
+    background-color:rgba(230,100,190,0.7);  
+    border:1px solid rgba(230,100,190,0.7);
+  }
+}
+
 /**********************************************************
 header
 **********************************************************/
@@ -119,20 +231,7 @@ header
     margin-top:10px;
   }
   &__button {
-    font-size:20px;
-    text-transform:uppercase;
-    background-color:@backgroundbutton;
-    padding:10px 30px;
-    color:@colorbutton;
-    border:1px solid darken(@backgroundbutton,30%);
-    box-shadow: 0 0 15px darken(@backgroundbutton,30%); 
-    border-radius:24px;
-    margin-top:40px;
-    &:hover {
-      color:darken(@colorbutton,20%);
-      background-color:darken(@backgroundbutton,15%);
-      transition:0.6s;
-    }
+    .button();
   }
  }
 /**********************************************************
@@ -199,22 +298,12 @@ navigation
      
   }
   &__button {
-    font-size:20px;
-    text-transform:uppercase;
-    background-color:@backgroundbutton;
-    padding:10px 30px;
-    color:@colorbutton;
-    border:1px solid darken(@backgroundbutton,30%);
-    box-shadow: 0 0 15px darken(@backgroundbutton,30%); 
-    border-radius:24px;
-    margin-top:40px;
-    &:hover {
-      color:darken(@colorbutton,20%);
-      background-color:darken(@backgroundbutton,15%);
-      transition:0.6s;
-    }
+    .button();
   }    
 }
+/**********************************************************
+content
+**********************************************************/
 .content {
   padding:0;
   margin:0;
@@ -305,7 +394,8 @@ navigation
     	.content__image{      
         background-image:url('../images/human.jpg');
         background-size:none;
-        background-position:right center;       
+        background-position:right center;
+                
       }
       background-color: #F7F8FC;
       .content__text{
@@ -320,6 +410,7 @@ navigation
   &__image {
   	 width:50%;
   	 z-index:10;
+  	 height:400px;
   	 position:relative;  	 
   	 background-repeat:no-repeat;
   	 background-size:contain;
@@ -360,4 +451,49 @@ navigation
   &__prof {
     color:@subtitle;
   }
+}
+/**********************************************************
+footer
+**********************************************************/
+.footer {	
+  background-color:#FFFFFF;
+  background-image:url("../images/footer.jpg");
+  background-size:contain;
+  padding-top:50px;
+  height:950px;
+  position:relative;
+  text-align:center;
+  background-position: center bottom;
+  background-repeat:no-repeat;
+  &__subtitle {
+    color:@subtitle;
+    text-transform:uppercase;
+    font-size:@sizesubtitle;  
+  }
+  &__title {
+    margin-top:40px;
+    font-size:50px;
+    margin-bottom:0;
+    color:@title;
+  }
+  &__button {
+    .button();
+  }
+  &__copyright {
+    color:darken(@subtitle,40%);
+    text-transform:uppercase;
+    font-size:@sizesubtitle;
+    position:absolute;
+    bottom:30px;
+    left:200px;
+  }
+  &__icon {
+    font-size:25px;
+    font-wieght:bold; 
+    margin-right:20px;     
+  }
+  &__link {
+    .link();
+  }
+  
 }
