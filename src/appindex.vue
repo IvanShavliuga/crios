@@ -23,6 +23,22 @@ div#appindex(data-id="appindex")
               p.menu__desc Lorem ipsum dolor sit ame  
               p.menu__desc Lorem ipsum dolor sit amet
         button.menu__button check our offer
+  section
+    .content
+      each item in [1,2,3,4,5]
+        .content__box
+          .content__image
+            if item == 3 
+              .content__arnament
+            if item == 4
+              .content__arnament  
+          .content__text 
+            .content__block
+              h3.content__header Lorem ipsum dolor
+              p.content__desc Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              if item == 5 
+                h4.content__name John Toe
+                p.content__prof CEO of crios.com
 </template>
 <script>
 
