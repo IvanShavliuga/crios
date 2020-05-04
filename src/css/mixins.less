@@ -1,0 +1,104 @@
+/**********************************************************
+mixins
+**********************************************************/
+.button() {
+    
+    text-transform:uppercase;
+    background-color:@backgroundbutton;
+    @media (max-width: 500px) {
+      padding:10px 25px;
+      font-size:14px;    
+    }
+    padding:10px 30px;
+    font-size:20px;  
+    color:@colorbutton;
+    border:1px solid darken(@backgroundbutton,30%);
+    box-shadow: 0 0 15px darken(@backgroundbutton,30%); 
+    border-radius:24px;
+    margin-top:40px;
+    position:relative;
+    &:hover {
+      color:darken(@colorbutton,20%);
+      background-color:darken(@backgroundbutton,15%);
+      transition:0.6s;
+    }
+    &:focus {
+    	outline:1px solid rgba(250,78,190,0.5);
+      &:before {
+        content:" ";
+        position:absolute;
+        width:13px;
+        height:13px;
+        @media (max-width: 500px) {
+          height:10px;
+          width:10px;    
+        }
+        left:10px;
+        top: 15px;
+        z-index:60;
+        border-radius:50%;
+        color:@bodyhover;
+        font-size:15px;
+        font-weight:bold;
+        line-height:14px;
+        border:1px solid red;
+        background-color:transparent;
+        animation:hover 1s infinite;      
+      } 
+    }
+
+}
+.link() {
+    margin-right:20px; 
+    tab-index:5;    
+  	 &:hover {
+      color:@bodyhover!important;  
+      text-decoration:underline; 
+      &:before {
+        content:"+";
+        position:absolute;
+        width:13px;
+        height:13px;
+        left:-15px;
+        top: 2px;
+        @media (max-width: 500px) {
+          height:10px;
+          width:10px; 
+          font-size:14px;   
+        }
+        border-radius:50%;
+        color:@bodyhover;
+        font-size:20px;
+        font-weight:bold;
+        line-height:9px;
+        border:1px solid @bodyhover;
+        background-color:transparent;
+        animation:link 1s infinite;      
+      } 
+    }
+    color: @bodylink;
+    text-decoration:none;
+    position:relative;
+    &:focus {
+    	outline:1px solid rgba(250,78,190,0.5);
+      &:before {
+        content:" ";
+        position:absolute;
+        width:13px;
+        height:13px;
+        left:-15px;
+        top: 2px;
+        @media (max-width: 500px) {
+          height:10px;
+          width:10px;    
+        }
+        border-radius:50%;
+        color:@bodyhover;
+        font-size:15px;
+        font-weight:bold;
+        line-height:14px;
+        background-color:transparent;
+        animation:hover 1s infinite;      
+      } 
+    }
+}

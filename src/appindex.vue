@@ -2,11 +2,8 @@
 div#appindex(data-id="appindex")
   header.header
     .header__logo 
-      span c
-      span r
-      span i
-      span o
-      span s
+      each item in ['c','r','i','o','s']
+        span(data-id=item)=item
     .header__subtitle free psd template
     h1.header__title Simple PSD template with cool stuff
     .header__desc Lorem ipsum dolor sit amet, consectetur adipiscing eit.
