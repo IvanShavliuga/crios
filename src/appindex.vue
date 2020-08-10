@@ -4,22 +4,23 @@ div#appindex(data-id="appindex")
     .header__logo 
       each item in ['c','r','i','o','s']
         span(data-id=item)=item
-    .header__subtitle free psd template
-    h1.header__title Simple PSD template with cool stuff
-    .header__desc Lorem ipsum dolor sit amet, consectetur adipiscing eit.
-    button.header__button explore template
+    .header__subtitle Семейный отдых
+    h1.header__title Лучшая отечественная туристическая база
+    .header__desc Отдых для всей семьи в лучших белорусских традициях
+    button.header__button заказать билет
   section
     .container
       .menu
         p.menu__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing eit.
         h2.menu__title Lorem ipsum dolor sit amet
         ul.menu__list
-          each item in ["home","codes","lections","about us"]
-            li.menu__item
-              h3.menu__element=item
-              p.menu__desc Lorem ipsum dolor sit ame  
-              p.menu__desc Lorem ipsum dolor sit amet
-        button.menu__button check our offer
+          li.menu__item(v-for="(item, key) in pricelist" :key="key" @click="item.select=!item.select" :class="['menu__item','menu__item__'+item.icon]")
+            h3.menu__price {{item.price}}  
+              span $
+            p(:class="(item.select)?('menu__item__select'):('menu__item__none')") check           
+            h4.menu__element {{item.title}}
+            p.menu__desc {{item.desc}}           
+        button.menu__button заказать
   section
     .content
       each item in [1,2,3,4,5]
@@ -53,6 +54,31 @@ export default {
   data() {
     return {
       status:"200 OK",
+      pricelist: [{
+        title: "Лекции",
+        desc: "Научные форумы",
+        price: 250,
+        icon: "lection",
+        select: false      
+      },{
+        title: "Спорт",
+        desc: "Спортивные соревнования",
+        price: 200,
+        icon: "sport",
+        select: false      
+      },{
+        title: "Медовый месяц",
+        desc: "Семейные праздники",
+        price: 230,
+        icon: "family",
+        select: false
+      },{
+        title: "Фестивали",
+        desc: "Культурные мероприятия",
+        price: 270,
+        icon: "fest",
+        select: false      
+      }]
     }  
   }
 }
