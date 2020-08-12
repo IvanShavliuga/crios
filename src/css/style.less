@@ -175,6 +175,7 @@ navigation
     list-style:none;
   }
   &__item {
+    position: relative;
     width:190px;
     margin:10px 20px;
     text-align:center;
@@ -182,18 +183,17 @@ navigation
     background-size:none;
     background-position:center top;
     display:block; 
-    filter:grayscale(0.85);
-    &:first-child{     
+    &__lection{     
       background-image: url("../images/nav1.jpg");  
       
     }
-    &:nth-child(2){     
+    &__sport{     
       background-image: url("../images/nav2.jpg");  
     }
-    &:nth-child(3){     
+    &__family{     
       background-image: url("../images/nav3.jpg");  
     }
-    &:last-child{     
+    &__fest{     
       background-image: url("../images/nav4.jpg");  
     } 
     &:hover {
@@ -201,6 +201,19 @@ navigation
       .menu__element, .menu__desc {
         color:@bodyhover;
       }
+    }
+    &__select {
+      text-shadow: 0 2px 2px darken(#67cc32,5%);
+      color: #67cc32;
+      position: absolute;
+      right: 60px;
+      top: 40px;
+      transform: scaleY(1.2);
+      font-size: 15px;
+      display: block;    
+    }
+    &__none {
+      display: none;     
     }
   }
   &__element {
@@ -211,8 +224,22 @@ navigation
     color:@subtitle;
     font-size:@sizesubtitle;
     margin:0;
-    text-align:center;
-     
+    text-align:center;  
+  }
+  &__price {
+    position: absolute; 
+    top: 15px;
+    left: 35px;
+    font-size: 15px;
+    color: #fff;
+    padding: 5px;
+    background: #ad67d2; 
+    opacity: 0.7;
+    border-radius: 45%; 
+    transform: scaleY(1.6);
+    span {
+      color: #54ec90;    
+    }
   }
   &__button {
     .button();
