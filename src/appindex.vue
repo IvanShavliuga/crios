@@ -7,12 +7,12 @@ div#appindex(data-id="appindex")
     .header__subtitle Семейный отдых
     h1.header__title Лучшая отечественная туристическая база
     .header__desc Отдых для всей семьи в лучших белорусских традициях
-    button.header__button заказать билет
+    button.header__button заказать
   section
     .container
       .menu
-        p.menu__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing eit.
-        h2.menu__title Lorem ipsum dolor sit amet
+        p.menu__subtitle Мы предлагаем вам экслюзивный отдых
+        h2.menu__title Только у нас самые лучшие цены
         ul.menu__list
           li.menu__item(v-for="(item, key) in pricelist" :key="key" @click="item.select=!item.select" :class="['menu__item','menu__item__'+item.icon]")
             h3.menu__price {{item.price}}  
@@ -32,16 +32,30 @@ div#appindex(data-id="appindex")
               .content__arnament  
           .content__text 
             .content__block
-              h3.content__header Lorem ipsum dolor
-              p.content__desc Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              if item == 1
+                h3.content__header Наш собственный парк
+              if item == 1
+                p.content__desc Освежающие и успокаивающие прогулки по нашему парку устронят любое чувство тревоги и вылечат любую дипрессию.
+              if item == 2
+                h3.content__header Наши деревенские дома
+              if item == 2
+                p.content__desc Деревенские дома построенные в лучших белорусских традициях помогут почувствовать единство со своими предками
+              if item == 3
+                h3.content__header Музыка и фильмы
+              if item == 3
+                p.content__desc Всеми любимые музыкальные треки и клипы, а так же различные позитивные фильмы, доступные в том числе в офлайн режиме 
+              if item == 4
+                h3.content__header Общение с друзьями
+              if item == 4
+                p.content__desc Полный доступ к социальным сетям и мессенджерам, а также высокоскоростной интернет в полном объеме  
               if item == 5 
                 h4.content__name John Toe
                 p.content__prof CEO of crios.com
   footer.footer
     .footer__content
-      p.footer__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing eit.
-      h2.footer__title Lorem ipsum dolor sit amet
-      button.footer__button push button 
+      p.footer__subtitle Праздничные мероприятия на любой вкус в лучших луховных традициях
+      h2.footer__title CRIOS - лучший семейный отдых
+      button.footer__button Заказать 
     .footer__copyright 
       p 
         span.footer__icon &copy; 
