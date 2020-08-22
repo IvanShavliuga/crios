@@ -1,5 +1,5 @@
 import Vue from 'vue';
-
+import Axios from 'axios';
 import appindex from './appindex';
 
 Vue.config.devtools = true;
@@ -9,6 +9,7 @@ new Vue({
     data: {
     	Hello:"Hello world",
     	result:"",
+    	database: {},
     	query:`/* Create a table called invoices */
 CREATE TABLE invoices (
   id int PRIMARY KEY,
@@ -67,6 +68,9 @@ FROM invoices i;`
     },
     created() {
       this.sqltest();
-      console.log(this.result)      
+      console.log(this.result) 
+      Axios.get("https://ivanshavliuga.github.io/crios/api/database.json")
+        .then(response => { this.database = response.data; console.log("status: ", this.database.status)})
+          /*response => console.log("response", response.data)*/             
     }
 });

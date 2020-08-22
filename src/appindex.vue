@@ -15,7 +15,7 @@ div#appindex(data-id="appindex")
         p.menu__subtitle Мы предлагаем вам экслюзивный отдых
         h2.menu__title Только у нас самые лучшие цены
         ul.menu__list
-          li.menu__item(v-for="(item, key) in pricelist" :key="key" @click="item.select=!item.select" :class="['menu__item','menu__item__'+item.icon]")
+          li.menu__item(v-for="(item, key) in query.pricelist" :key="key" @click="item.select=!item.select" :class="['menu__item','menu__item__'+item.icon]")
             h3.menu__price {{item.price}}  
               span $
             p(:class="(item.select)?('menu__item__select'):('menu__item__none')") check           
@@ -50,7 +50,7 @@ div#appindex(data-id="appindex")
               if item == 4
                 p.content__desc Полный доступ к социальным сетям и мессенджерам, а также высокоскоростной интернет в полном объеме  
               if item == 5 
-                h4.content__name John Toe
+                h4.content__name Константин Вавилов
                 p.content__prof CEO of crios.com
   footer.footer(v-show="!order")
     .footer__content
@@ -66,6 +66,14 @@ div#appindex(data-id="appindex")
 <script>
 import modal from './modal.vue';
 export default {
+  props: {
+    query: {
+      type: Object,
+      default: {
+        status: "404"    
+      }
+    }  
+  },
   data() {
     return {
       status:"200 OK",
@@ -107,7 +115,7 @@ export default {
   methods: {
     orderclick() {
       this.order = !this.order;    
-    }  
+    },
   }
 }
 </script>
