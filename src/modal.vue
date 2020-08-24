@@ -1,6 +1,6 @@
-<img src="Screenshot at 2020-04-24 18:45:34.png" alt="" /><template lang="pug">
+<template lang="pug">
 .modal
-  section.modal__box
+  section.modal__box(v-show="!success")
     h3.modal__title Оформление заказа
     form.modal__form
       input.modal__form__input(type="text" v-model="name")
@@ -14,8 +14,12 @@
       div.modal__form__select(v-if="check") {{selitem.price}}
           span $ 
       span.modal__form__control   
-        button.modal__form__button(@click="order=!order") заказать
+        button.modal__form__button(@click="(check)?(success=true):(success=false)") заказать
         button.modal__form__button(@click="order=!order") отменить
+  section.modal__box(v-show="success")
+    h3.modal__title Ваш заказ успешно оформлен
+    span.modal__form__control   
+      button.modal__form__button(@click.prevent="order=false") закрыть
 </template>
 <script>
 export default {
@@ -31,7 +35,8 @@ export default {
       email: "iva.drakon.nov@gmail.com",
       selitem: {},
       selid:-1,
-      check: false    
+      check: false,
+      success: false    
     }  
   },
   methods: {

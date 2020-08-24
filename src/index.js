@@ -57,10 +57,7 @@ FROM invoices i;`
         xhr.send(formData);
         var s = xhr.responseText;
         s = s.replace(/\\u003c/gi,"<").replace(/\\u003e/gi,">").replace(/\\u0026nbsp;/gi, ">").replace(/\\u0027/gi, ">").replace(/{"Warnings":null,"Errors":null,"Result":"/gi, "\n").replace(/","Stats":"/gi, ">>").replace(/","Files":null}/gi,".").replace(/\\r\\n/g, "\n").replace(/","Files":null,"NotLoggedIn":false}/gi, ".");
-        this.result = s;
-        // Replace all \u003c, e, 26
-        // (); 
-          	
+        this.result = s;  	
     	}
     },
     components: {
