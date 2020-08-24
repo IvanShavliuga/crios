@@ -185,7 +185,6 @@ navigation
     display:block; 
     &__lection{     
       background-image: url("../images/nav1.jpg");  
-      
     }
     &__sport{     
       background-image: url("../images/nav2.jpg");  
@@ -352,7 +351,6 @@ content
   }
   &__image {
   	 width:50%;
-
   	 z-index:10;
   	 height:400px;
   	 position:relative;  	 
@@ -385,8 +383,7 @@ content
     background-position:center center;       
     height: 350px;
     width: 350px;
-    position: absolute;
-   
+    position: absolute;  
   }
   &__name {
     font-size:20px;
@@ -440,4 +437,167 @@ footer
     .link();
   }
   
+}
+/**********************************************************
+modal box
+**********************************************************/
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(128,128,128,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 20;
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 25px;
+    padding: 25px;
+    border: none;
+    box-shadow: 0 0 8px 8px #565bbc;
+    width: 60vw;
+    height: 60vh;
+    margin: auto;
+  }
+  &__title {
+    text-align:center;
+    font-size:30px;
+    margin-top:10px;
+	 color:@title;   
+  }
+  &__form {
+    width: 50vw;
+    height: 40vh;
+    margin: auto; 
+    &__button {
+      .button();
+      margin-top: 0;
+      margin-right: 20px;
+      &:first-child {
+        tab-index: 7;
+      }
+      &:last-child {
+        tab-index: 8;
+      }
+    }
+    &__input {
+      display: block;
+      width: 37vw;
+      padding: 5px;
+      margin: 15px auto;
+      border: none;
+      color: #565bbc;
+      font-size: 20px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #565bbc;
+      &:first-child {
+        tab-index: 1;
+      }
+      &:last-child {
+        tab-index: 2;
+      }
+    } 
+    &__list {
+      display: flex;
+      flex-direction: row;
+      width: 40vw;
+      padding: 5px;
+      margin: 15px auto;
+      color: #565bbc;
+      background: transparent;
+      font-size: 15px;
+      overflow: hidden; 
+    }
+    &__price {
+      color: #565bbc;
+      font-size: 15px;
+      margin-top: -5px;
+      margin-left: 5px;
+      text-align: center;
+      span {
+        color: #54ec90;
+        margin-left: 10px;      
+      }  
+    }
+    &__check {
+      width: 70px;
+      height: 15px;
+      padding: 5px;    
+      position: absolute;
+      left: 35px;
+      top: -5px;
+      z-index: 30;
+      font-weight: bold;
+      font-size: 18px;
+      transform: scaleY(1.1) rotateZ(20deg);
+      text-transform: uppercase;
+      color: #fc2420;
+      border: 3px solid #fc2420;
+    }
+    &__item {
+      position: relative;
+      list-style: none;
+      width: 15vw;
+      height: 20vh;
+      background-repeat: no-repeat; 
+      background-position: center top;
+      &:first-child {
+        tab-index: 3;
+      }
+      &:nth-child(2) {
+        tab-index: 4;
+      }
+      &:nth-child(3) {
+        tab-index: 5;
+      }
+      &:last-child {
+        tab-index: 6;
+      }
+    }
+    &__product {
+      margin-top: 60px;
+      text-align: center; 
+    }
+    &__total {
+      color: #565bbc;
+      font-size: 25px;
+      margin-left: 20px;
+      span {
+        color: #54ec90;
+        margin-left: 10px;      
+      }  
+    }
+    &__select {
+      margin-left: 35px;  
+      color: #565bbc;
+      font-size: 35px;
+      height: 40px;
+      text-align: center;
+      span {
+        color: #54ec90;
+        margin-left: 10px;      
+      }   
+    }
+    &__control {
+      margin: 10px auto;
+      width: 37vw; 
+      display: flex;  
+    }
+    &__lection{     
+      background-image: url("../images/nav1.jpg");  
+    }
+    &__sport{     
+      background-image: url("../images/nav2.jpg");  
+    }
+    &__family{     
+      background-image: url("../images/nav3.jpg");  
+    }
+    &__fest{     
+      background-image: url("../images/nav4.jpg");  
+    } 
+  }
 }

@@ -1,0 +1,71 @@
+/* Created by r8w9 */
+
+html, body {
+ /*height: 70%;*/
+ margin: 0;
+ padding: 0;
+ font-family: 'Roboto', sans-serif;
+ overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+textarea {
+  width: 98vw;
+  height: 70%;
+  font-family: 'Consolas';
+  color: #0065ba;
+  background-color: white;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+#run {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Consolas';
+  width: 100%;
+}
+
+#sqlResult {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#sqlResult tr:nth-child(even){background-color: #f2f2f2;}
+#sqlResult tr:hover {background-color: #ddd; cursor: crosshair;}
+
+#sqlResult th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #cc00ff;
+  color: white;
+}
+
+table, td, th {
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+}
