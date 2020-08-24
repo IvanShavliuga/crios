@@ -467,7 +467,7 @@ modal box
     text-align:center;
     font-size:30px;
     margin-top:10px;
-	    color:@title;   
+	 color:@title;   
   }
   &__form {
     width: 50vw;
@@ -530,6 +530,7 @@ modal box
       position: absolute;
       left: 35px;
       top: -5px;
+      z-index: 30;
       font-weight: bold;
       font-size: 18px;
       transform: scaleY(1.1) rotateZ(20deg);
@@ -540,8 +541,8 @@ modal box
     &__item {
       position: relative;
       list-style: none;
-      width: 10vw;
-      height: 15vh;
+      width: 15vw;
+      height: 20vh;
       background-repeat: no-repeat; 
       background-position: center top;
       &:first-child {
@@ -582,7 +583,7 @@ modal box
       }   
     }
     &__control {
-      margin: 50px auto;
+      margin: 10px auto;
       width: 37vw; 
       display: flex;  
     }

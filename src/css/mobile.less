@@ -167,3 +167,84 @@
     }
   }
 }
+/**********************************************************
+  modal
+  **********************************************************/ 
+@media screen and (max-width: 594px) {
+  .modal__box {
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+  } 
+  .modal__form {
+    width: 100vw;
+    height: 100vh;
+    &__select {
+      margin-left: 0; 
+    }
+    &__check {
+      margin-left: -65px;
+      transform: scaleY(0.9) rotateZ(20deg);  
+    }
+    &__control {
+      margin-left: 10px;    
+    }
+  }  
+}
+@media screen and (max-width: 500px) {
+  .modal__form {
+    &__check {
+      margin-left: -85px;
+      transform: scaleY(0.8) rotateZ(20deg);
+    }
+    &__control {
+      display: flex;
+      margin-top: 20px;    
+    }
+    &__select {
+      margin-left: 0; 
+    }
+    &__list {
+      justify-content: space-around;  
+    }
+    &__input {
+      font-size: 15px; 
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  .modal {
+    padding: 0;  
+  }
+  .modal__box {
+    width: 100vw;
+    padding: 15px;
+  } 
+  .modal__form {
+    width: 100vw;
+    &__control {
+      display: flex;
+      margin-top: 5px; 
+      margin-left: 0;   
+    }
+    &__button {
+      margin-left: 5px;
+      margin-right: 5px;    
+    }
+    &__item {
+      transform: scale(0.8);    
+    }
+    &__select {
+      margin-top: -20px;    
+    }
+    &__input {
+      font-size: 12px; 
+    }
+  }
+}
+@media screen and (max-width: 315px) {
+  .modal__form__control {
+    transform: scale(0.8);
+  }
+  
+}

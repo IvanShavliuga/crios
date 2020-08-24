@@ -1,4 +1,4 @@
-<template lang="pug">
+<img src="Screenshot at 2020-04-24 18:45:34.png" alt="" /><template lang="pug">
 .modal
   section.modal__box
     h3.modal__title Оформление заказа
@@ -11,11 +11,11 @@
           p.modal__form__price {{item.price}}
             span $ 
           p.modal__form__check(v-if="selid==item.id") select
-      span.modal__form__control      
+      div.modal__form__select(v-if="check") {{selitem.price}}
+          span $ 
+      span.modal__form__control   
         button.modal__form__button(@click="order=!order") заказать
         button.modal__form__button(@click="order=!order") отменить
-        span.modal__form__select(v-if="check") {{selitem.price}}
-          span $
 </template>
 <script>
 export default {

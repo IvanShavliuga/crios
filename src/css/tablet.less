@@ -70,14 +70,76 @@
     }
   }
 } 
+ /**********************************************************
+  modal
+  **********************************************************/ 
 @media screen and (max-width: 1300px) {
-  .modal__box {
-    position: relative;
-    width: 100vw;
+  .modal {
     height: 100vh;
+    overflow: hidden;
+  }
+  .modal__box {
+    width: 60vw;
+    height: 80vh;
   } 
   .modal_form {
-    width: 80vw;
-    height: 80vh;
+    width: 60vw;
+    height: 86vh;
   }   
+}
+@media screen and (max-width: 1190px) {
+  .modal__box {
+    width: 60vw;
+  } 
+  .modal__form {
+    width: 60vw;
+    height: 80vh;
+    &__input, &__control, &__list{
+      width: 60vw;
+    }
+    &__list {
+      justify-content: space-around; 
+    }
+    &__check {
+      margin-left: 5px; 
+    }
+  }   
+}
+@media screen and (max-width: 800px) {
+  .modal__form__product {
+      margin-top: 50px;
+      font-size: 12px;    
+    }
+}
+@media screen and (max-width: 784px) {
+  .modal__form__select {
+    margin-left: 10px;  
+  }
+}
+@media screen and (max-width: 784px) {
+  .modal__form__select {
+    margin-left: 10px;  
+  }
+}
+@media screen and (max-width: 760px) {
+  .modal__box {
+    width: 80vw;
+    padding: 15px;
+  } 
+  .modal__form {
+    width: 80vw;
+    &__input, &__control, &__list{
+      width: 60vw;
+    }
+  }   
+}
+@media screen and (max-width: 648px) {
+  .modal__form {
+    &__select {
+      margin-left: -10px;  
+    }
+    &__check {
+      margin-left: -45px; 
+    }
+  }  
 }
