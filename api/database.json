@@ -1,33 +1,33 @@
 {
-      status:"200 OK",
-      order:false,
-      pricelist: [{
-        id:0,
-        title: "Лекции",
-        desc: "Научные форумы",
-        price: 250,
-        icon: "lection",
-        select: false      
+      "status":"200 OK",
+      "order":false,
+      "pricelist": [{
+        "id":0,
+        "title": "Лекции",
+        "desc": "Научные форумы",
+        "price": 250,
+        "icon": "lection",
+        "select": false      
       },{
-        id:1,
-        title: "Спорт",
-        desc: "Спортивные соревнования",
-        price: 200,
-        icon: "sport",
-        select: false      
+        "id":1,
+        "title": "Спорт",
+        "desc": "Спортивные соревнования",
+        "price": 200,
+        "icon": "sport",
+        "select": false      
       },{
-        id:2,
-        title: "Медовый месяц",
-        desc: "Семейные праздники",
-        price: 230,
-        icon: "family",
-        select: false
+        "id":2,
+        "title": "Медовый месяц",
+        "desc": "Семейные праздники",
+        "price": 230,
+        "icon": "family",
+        "select": false
       },{
-        id:3,
-        title: "Фестивали",
-        desc: "Культурные мероприятия",
-        price: 270,
-        icon: "fest",
-        select: false      
+        "id":3,
+        "title": "Фестивали",
+        "desc": "Культурные мероприятия",
+        "price": 270,
+        "icon": "fest",
+        "select": false      
       }]
     }  
